@@ -30,12 +30,13 @@ public class MemoRepositoryTests {
     public void testselect(){
         Long mno= 100l;
 
-        Optional<Memo> result= memoRepository.findAllById(mno);
+        Optional<Memo> result= memoRepository.findById(mno);
 
         System.out.println("============================================================");
 
-        if(result.isPresent()){
-          Memo memo=result.get();
-          System.out.println(memo);
+        if(result.isPresent()) {
+            Memo memo = result.get();
+            System.out.println(memo);
+        }
     }
 }
