@@ -30,5 +30,5 @@ public interface MemoRepository extends JpaRepository<Memo, Long> {
     List<Memo> getNativeResult();
 
     @Query(value = "select * from tbl_memo where mno >= 80",nativeQuery = true)
-    List<Objects[]> getNativeResult2();
+    List<Object[]> getNativeResult2();
 }

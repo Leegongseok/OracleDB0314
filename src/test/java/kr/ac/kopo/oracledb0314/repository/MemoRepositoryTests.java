@@ -13,6 +13,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.sql.SQLOutput;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 import java.util.stream.IntStream;
 
@@ -154,6 +155,13 @@ public class MemoRepositoryTests {
         List<Memo> result=memoRepository.getNativeResult();
         for(Memo memo :result){
             System.out.println(memo);
+        }
+    }
+    @Test
+    public void testQueryAnnotationNative2(){
+        List<Object[]> result=memoRepository.getNativeResult2();
+        for(Object[] memoObj :result){
+            System.out.println(memoObj[1]);
         }
     }
 }//클래스 끝
